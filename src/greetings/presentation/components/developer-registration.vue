@@ -20,13 +20,12 @@ function submitRegistrationRequest(){
   } else{
     console.log('Cannot register: Both fields are required');
     errorMessage.value = 'Please provide a least first name or last name. Warning: Both fields are required for a successful registration.';
-
   }
 }
 
 function deferRegistration(){
   console.log('Deferring registration');
-  emit('developer-registered', {firstName:'', lastName:''});
+  emit('registration-deferred', {firstName:'', lastName:''});
   clearTimeout();
   errorMessage.value = '';
 }
@@ -54,7 +53,7 @@ function clearFields(){
       </div>
       <div class="actions">
         <button type="submit">Register</button>
-        <button type="button" v-on:click="deferRegistration">Later</button>
+        <button type="button" v-on:click="deferRegistration()">Later</button>
         <button type="button" v-on:click="clearFields()">Clear</button>
       </div>
     </form>

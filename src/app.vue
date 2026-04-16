@@ -34,6 +34,6 @@ function updateDeveloperCount(developer){
 <template>
 <h1>Hello Vue Developer Application</h1>
   <developer-registration
-    @developer-registration="updateRegisteredDeveloperInfo"
-    @register="resetRegisteredDeveloperInfo"/>
+    @developer-registered="updateRegisteredDeveloperInfo"
+    @registration-deferred="resetRegisteredDeveloperInfo"/>
 </template>
