@@ -10,7 +10,7 @@ const emit = defineEmits(['developer-registered','registration-deferred']);
 function submitRegistrationRequest(){
   let submittedFirstName = firstName.value.toString().trim();
   let submittedLastName = lastName.value.toString().trim();
-  if(submittedFirstName || submittedLastName){
+  if(submittedFirstName && submittedLastName){
     console.log('Registering developer');
     emit('developer-registered', {
       firstName: submittedFirstName,
